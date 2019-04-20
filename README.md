@@ -1,2 +1,0 @@
-# eride
-share your ride
