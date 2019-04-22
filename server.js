@@ -3,16 +3,16 @@ app = express();
 bodyParser = require('body-parser');
 port = process.env.PORT || 3000;
 
-const mysql = require('mysql');
-const mc = mysql.createConnection({
-    host    :  'localhost',
-    user    :  'admin',
-    password:  'Djana@2349',
-    database:   'onmiway'
-});
+// const mysql = require('mysql');
+//const mc = mysql.createConnection({
+   / host    :  'localhost',
+   // user    :  'admin',
+    //password:  'Djana@2349',
+  //  database:   'onmiway'
+//});
  
 // connect to database
-mc.connect();
+//mc.connect();
 
 app.listen(port);
 
