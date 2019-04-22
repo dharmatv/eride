@@ -5,7 +5,7 @@ port = process.env.PORT || 3000;
 
 // const mysql = require('mysql');
 //const mc = mysql.createConnection({
-   / host    :  'localhost',
+   // host    :  'localhost',
    // user    :  'admin',
     //password:  'Djana@2349',
   //  database:   'onmiway'
