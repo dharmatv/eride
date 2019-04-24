@@ -13,7 +13,7 @@ const user_constructor = function(user){
 
 user_constructor.createData = function createUser(newData, result){
 
-    sql.query("insert into user set ?", newData,function(err, res){
+    sql.query("insert into users set ?", newData,function(err, res){
             if(err){
                 console.log("error:", err);
                 result(err, null);
@@ -26,7 +26,7 @@ user_constructor.createData = function createUser(newData, result){
 
 user_constructor.getUserbyID = function createUser(userID, result){
 
-    sql.query("select * from user where id = ?", userID, function(err, res){
+    sql.query("select * from users where id = ?", userID, function(err, res){
         if(err){
             console.log("error:", err);
             result(err, null);
@@ -39,7 +39,7 @@ user_constructor.getUserbyID = function createUser(userID, result){
 
 user_constructor.getAlldata = function getAlldata(result){
     console.log("result"+result);  //result parameter is controller function
-    sql.query("select * from user", function(err, res){
+    sql.query("select * from users", function(err, res){
         console.log(res); //output of query
         if(err){
             console.log("error:", err);
@@ -52,7 +52,7 @@ user_constructor.getAlldata = function getAlldata(result){
 };
 
 user_constructor.updateByID = function(id, data, result){
-    sql.query("update user SET data = ? where id = ?", [data.data, id], function(err, res){
+    sql.query("update users SET data = ? where id = ?", [data.data, id], function(err, res){
         if(err){
             console.log("error:", err);
             result(err, null);
@@ -64,7 +64,7 @@ user_constructor.updateByID = function(id, data, result){
 };
 
 user_constructor.remove = function(id, result){
-    sql.query("DELETE FROM user where id = ?", [id], function(err, res){
+    sql.query("DELETE FROM users where id = ?", [id], function(err, res){
         if(err){
             console.log("error:", err);
             result(err, null);
