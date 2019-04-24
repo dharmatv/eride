@@ -3,16 +3,26 @@ app = express();
 bodyParser = require('body-parser');
 port = process.env.PORT || 3000;
 
- const mysql = require('mysql');
-const mc = mysql.createConnection({
-     host    :  'ec2-54-247-70-127.eu-west-1.compute.amazonaws.com',
-    user    :  'axthzsbxorpjoq',
-    password:  'bbe0417783325ee27cc17c788166a0fa5edd128c7f792b21c7a90f1d088c61e8',
-    database:   'd2f237trkrilnt'
-});
+//  const mysql = require('mysql');
+// const mc = mysql.createConnection({
+//      host    :  'ec2-54-247-70-127.eu-west-1.compute.amazonaws.com',
+//     user    :  'axthzsbxorpjoq',
+//     password:  'bbe0417783325ee27cc17c788166a0fa5edd128c7f792b21c7a90f1d088c61e8',
+//     database:   'd2f237trkrilnt'
+// });
  
-//connect to database
-mc.connect();
+// //connect to database
+// mc.connect();
+
+const { Client } = require('pg');
+
+const connection = new Client({
+  connectionString: 'postgres://axthzsbxorpjoq:bbe0417783325ee27cc17c788166a0fa5edd128c7f792b21c7a90f1d088c61e8@ec2-54-247-70-127.eu-west-1.compute.amazonaws.com:5432/d2f237trkrilnt',
+  ssl: true,
+});
+
+connection.connect();
+
 
 app.listen(port);
 
